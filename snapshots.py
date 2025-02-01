@@ -14,6 +14,17 @@ class Contabo:
         self.__api_password: str  = kwargs.get('apipassword', None)
 
     def createSnapshot(self, access_token: str, description: str, instanceId: str, name: str) -> bool:
+        """Create a snapshot of vm
+
+        Args:
+            access_token (str): access token for the api
+            description (str): of the snapshot
+            instanceId (str): instance id of the vm
+            name (str): of the snapshot
+
+        Returns:
+            bool: was it successfull or not
+        """        ''''''
         url = f"https://api.contabo.com/v1/compute/instances/{instanceId}/snapshots"
         data = {
             'name': name,
